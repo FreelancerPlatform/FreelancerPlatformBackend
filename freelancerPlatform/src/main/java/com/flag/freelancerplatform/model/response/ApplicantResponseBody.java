@@ -1,85 +1,62 @@
-package com.flag.freelancerplatform.model;
+package com.flag.freelancerplatform.model.response;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.io.Serializable;
+import java.util.List;
 
-@Entity
-@Table(name = "user")
-@JsonDeserialize(builder = User.Builder.class)
-public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
+@JsonDeserialize(builder = ApplicantResponseBody.Builder.class)
+public class ApplicantResponseBody {
+
+    @JsonProperty("email")
     private String email;
 
+    @JsonProperty("name")
     private String name;
 
-    @JsonIgnore
-    private String password;
-
+    @JsonProperty("gender")
     private String gender;
 
     @JsonProperty("education_level")
     private String educationLevel;
 
-    public User() {}
+    @JsonProperty("certification")
+    private List<String> certification;
 
-    private User(Builder builder) {
+    @JsonProperty("skill")
+    private List<String> skill;
+
+    public ApplicantResponseBody(Builder builder) {
         this.email = builder.email;
         this.name = builder.name;
-        this.password = builder.password;
         this.gender = builder.gender;
         this.educationLevel = builder.educationLevel;
+        this.certification = builder.certification;
+        this.skill = builder.skill;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public User setEmail(String email) {
-        this.email = email;
-        return this;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public User setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public User setPassword(String password) {
-        this.password = password;
-        return this;
     }
 
     public String getGender() {
         return gender;
     }
 
-    public User setGender(String gender) {
-        this.gender = gender;
-        return this;
-    }
-
     public String getEducationLevel() {
         return educationLevel;
     }
 
-    public User setEducationLevel(String education_level) {
-        this.educationLevel = education_level;
-        return this;
+    public List<String> getCertification() {
+        return certification;
+    }
+
+    public List<String> getSkill() {
+        return skill;
     }
 
     public static class Builder {
@@ -89,14 +66,17 @@ public class User implements Serializable {
         @JsonProperty("name")
         private String name;
 
-        @JsonProperty("password")
-        private String password;
-
         @JsonProperty("gender")
         private String gender;
 
         @JsonProperty("education_level")
         private String educationLevel;
+
+        @JsonProperty("certification")
+        private List<String> certification;
+
+        @JsonProperty("skill")
+        private List<String> skill;
 
         public Builder setEmail(String email) {
             this.email = email;
@@ -105,11 +85,6 @@ public class User implements Serializable {
 
         public Builder setName(String name) {
             this.name = name;
-            return this;
-        }
-
-        public Builder setPassword(String password) {
-            this.password = password;
             return this;
         }
 
@@ -123,8 +98,18 @@ public class User implements Serializable {
             return this;
         }
 
-        public User build() {
-            return new User(this);
+        public Builder setCertification(List<String> certification) {
+            this.certification = certification;
+            return this;
+        }
+
+        public Builder setSkill(List<String> skill) {
+            this.skill = skill;
+            return this;
+        }
+
+        public ApplicantResponseBody build() {
+            return new ApplicantResponseBody(this);
         }
     }
 }

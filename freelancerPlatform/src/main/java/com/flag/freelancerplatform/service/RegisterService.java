@@ -1,6 +1,5 @@
 package com.flag.freelancerplatform.service;
 
-
 import com.flag.freelancerplatform.exception.UserAlreadyExistException;
 import com.flag.freelancerplatform.model.Authority;
 import com.flag.freelancerplatform.model.User;
@@ -28,14 +27,13 @@ public class RegisterService {
 
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public void add(User user, UserRole role) throws UserAlreadyExistException {
-        if (userRepository.existsById(user.getUsername())) {
+        if (userRepository.existsById(user.getEmail())) {
             throw new UserAlreadyExistException("User already exists");
         }
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setEnabled(true);
         userRepository.save(user);
-        authorityRepository.save(new Authority(user.getUsername(), role.name()));
+        authorityRepository.save(new Authority(user.getEmail(), role.name()));
     }
 
 }

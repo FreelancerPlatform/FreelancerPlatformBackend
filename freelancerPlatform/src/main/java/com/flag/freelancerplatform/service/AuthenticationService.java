@@ -28,7 +28,7 @@ public class AuthenticationService {
     public Token authenticate(User user, UserRole role) throws UserNotExistException {
         Authentication auth = null;
         try {
-            auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+            auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
         } catch (AuthenticationException exception) {
             throw new UserNotExistException("User doesn't exist");
         }
@@ -36,6 +36,6 @@ public class AuthenticationService {
         if (auth == null || !auth.isAuthenticated() || !auth.getAuthorities().contains(new SimpleGrantedAuthority(role.name()))) {
             throw new UserNotExistException("User doesn't exist, or has not right authentication");
         }
-        return new Token(jwtUtil.generateToken(user.getUsername()));
+        return new Token(jwtUtil.generateToken(user.getEmail()));
     }
 }

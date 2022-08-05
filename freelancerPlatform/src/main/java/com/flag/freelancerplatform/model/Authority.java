@@ -11,22 +11,23 @@ public class Authority implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String username;
+    private String email;
+
     private String authority;
 
     public Authority() {}
 
     public Authority(String username, String authority) {
-        this.username = username;
+        this.email = username;
         this.authority = authority;
     }
 
     public String getUsername() {
-        return username;
+        return email;
     }
 
     public Authority setUsername(String username) {
-        this.username = username;
+        this.email = username;
         return this;
     }
 
