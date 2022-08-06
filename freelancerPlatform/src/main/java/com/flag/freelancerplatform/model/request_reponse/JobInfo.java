@@ -2,7 +2,6 @@ package com.flag.freelancerplatform.model.request_reponse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.flag.freelancerplatform.model.Job;
 
 import java.util.List;
 
