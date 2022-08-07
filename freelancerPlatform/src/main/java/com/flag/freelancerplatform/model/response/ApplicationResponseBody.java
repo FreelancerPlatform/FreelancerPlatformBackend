@@ -21,6 +21,17 @@ public class ApplicationResponseBody {
     @JsonProperty("email")
     private String email;
 
+    public ApplicationResponseBody() {
+    }
+
+    public ApplicationResponseBody(Long applicationID, String status, String jobName, String applicantName, String email) {
+        this.applicationID = applicationID;
+        this.status = status;
+        this.jobName = jobName;
+        this.applicantName = applicantName;
+        this.email = email;
+    }
+
     public ApplicationResponseBody(Builder builder) {
         this.applicationID = builder.applicationID;
         this.status = builder.status;
