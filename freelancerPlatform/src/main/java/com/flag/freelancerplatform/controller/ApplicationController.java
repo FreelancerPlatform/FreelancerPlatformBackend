@@ -27,7 +27,7 @@ public class ApplicationController {
 
     @PostMapping("/Applications")
     public void addApplication(@RequestBody Application Application, Principal principal) {
-        Application.setapplicant(new User.Builder().setUsername(principal.getName()).build());
+        Application.setApplicant(new User.Builder().setUsername(principal.getName()).build());
         ApplicationService.add(Application);
     }
 
