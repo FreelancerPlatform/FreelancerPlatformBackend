@@ -1,6 +1,5 @@
 package com.flag.freelancerplatform.service;
 
-import com.flag.freelancerplatform.exception.ApplicationCollisionException;
 import com.flag.freelancerplatform.model.ApplicationStatus;
 import com.flag.freelancerplatform.model.Job;
 import com.flag.freelancerplatform.model.User;
@@ -14,11 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.flag.freelancerplatform.model.Application;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 
 

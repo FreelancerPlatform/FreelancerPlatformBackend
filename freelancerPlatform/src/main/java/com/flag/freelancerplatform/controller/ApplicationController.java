@@ -1,15 +1,11 @@
 package com.flag.freelancerplatform.controller;
 
-import com.flag.freelancerplatform.exception.InvalidApplicationDateException;
-import com.flag.freelancerplatform.model.Application;
-import com.flag.freelancerplatform.model.User;
 import com.flag.freelancerplatform.model.response.ApplicationResponseBody;
 import com.flag.freelancerplatform.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -28,7 +24,6 @@ public class ApplicationController {
 
     @PostMapping("/Applications/{job_ID}")
     public void addApplication(@PathVariable Long job_ID, Principal principal) {
-//        Application.setApplicant(new User.Builder().setUsername(principal.getName()).build()); 从service调用
         applicationService.addApplication(job_ID, principal.getName());
     }
 
