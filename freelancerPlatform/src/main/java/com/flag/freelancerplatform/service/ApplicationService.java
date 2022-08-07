@@ -1,8 +1,12 @@
 package com.flag.freelancerplatform.service;
 
 import com.flag.freelancerplatform.exception.ApplicationCollisionException;
+import com.flag.freelancerplatform.model.ApplicationStatus;
+import com.flag.freelancerplatform.model.Job;
 import com.flag.freelancerplatform.model.User;
+import com.flag.freelancerplatform.model.response.ApplicationResponseBody;
 import com.flag.freelancerplatform.repository.ApplicationRepository;
+import com.flag.freelancerplatform.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -21,46 +25,30 @@ import java.util.Set;
     @Service
     public class ApplicationService {
         private ApplicationRepository applicationRepository;
-        private JobApplicationDateRepository jobApplicationDateRepository;
+        private JobRepository jobRepository;
 
         @Autowired
-        public ApplicationService(ApplicationRepository applicationRepository, JobApplicationDateRepository jobApplicationDateRepository) {
+        public ApplicationService(ApplicationRepository applicationRepository, JobRepository jobRepository) {
             this.applicationRepository = applicationRepository;
-            this.jobApplicationDateRepository = jobApplicationDateRepository;
+            this.jobRepository = jobRepository;
         }
-        public List<Application> listByApplicant(String username) {
-            return applicationRepository.findByApplicant(new User.Builder().setUsername(username).build());
-        }
-
-        public List<Application> listByJob(Long JobId) {
-            return ApplicationRepository.findByJob(new Job.Builder().setId(JobId).build());
+        public List<ApplicationResponseBody> listByApplicant(String email) {
+            return applicationRepository.findByApplicant(email);
         }
 
         @Transactional(isolation = Isolation.SERIALIZABLE)
-        public void add(Application Application) throws ApplicationCollisionException {
-            Set<Long> jobIds = jobApplicationDateRepository.findByIdInAndDateBetween(Arrays.asList(Application.getJob().getId()), Application.getCheckinDate(), Application.getCheckoutDate().minusDays(1));
-            if (!jobIds.isEmpty()) {
-                throw new ApplicationCollisionException("Duplicate Application");
-            }
-
-//            List<JobReservedDate> reservedDates = new ArrayList<>();
-//            for (LocalDate date = Application.getCheckinDate(); date.isBefore(Application.getCheckoutDate()); date = date.plusDays(1)) {
-//                reservedDates.add(new JobReservedDate(new JobReservedDateKey(Application.getJob().getId(), date), Application.getJob()));
-//            }
-//            jobApplicationDateRepository.saveAll(reservedDates);
-            ApplicationRepository.save(Application);
+        public void addApplication(Long jobID, String email) {
+            Application application = new Application.Builder()
+                            .setEmail(new User.Builder().setEmail(email).build())
+                            .setJobID(new Job.Builder().setJobID(jobID).build())
+                            .setStatus(String.valueOf(ApplicationStatus.PENDING))
+                            .build();
+            applicationRepository.save(application);
         }
 
         @Transactional(isolation = Isolation.SERIALIZABLE)
-        public void delete(Long ApplicationId, String username) {
-            Application Application = ApplicationRepository.findByIdAndApplicant(ApplicationId, new User.Builder().setUsername(username).build());
-            if (Application == null) {
-                throw new ApplicationNotFoundException("Application is not available");
-            }
-            for (LocalDate date = Application.getCheckinDate(); date.isBefore(Application.getCheckoutDate()); date = date.plusDays(1)) {
-                JobApplicationDateRepository.deleteById(new JobReservedDateKey(Application.getJob().getId(), date));
-            }
-            ApplicationRepository.deleteById(ApplicationId);
+        public void delete(Long applicationID) {
+            applicationRepository.deleteById(applicationID);
         }
 
     }

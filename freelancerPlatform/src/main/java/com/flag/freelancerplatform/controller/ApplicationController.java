@@ -3,6 +3,7 @@ package com.flag.freelancerplatform.controller;
 import com.flag.freelancerplatform.exception.InvalidApplicationDateException;
 import com.flag.freelancerplatform.model.Application;
 import com.flag.freelancerplatform.model.User;
+import com.flag.freelancerplatform.model.response.ApplicationResponseBody;
 import com.flag.freelancerplatform.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,18 +22,18 @@ public class ApplicationController {
     }
 
     @GetMapping(value = "/Applications")
-    public List<Application> listApplications(Principal principal) {
+    public List<ApplicationResponseBody> listApplications(Principal principal) {
         return applicationService.listByApplicant(principal.getName());
     }
 
-    @PostMapping("/Applications")
-    public void addApplication(@RequestBody Application Application, Principal principal) {
-        Application.setApplicant(new User.Builder().setUsername(principal.getName()).build());
-        ApplicationService.add(Application);
+    @PostMapping("/Applications/{job_ID}")
+    public void addApplication(@PathVariable Long job_ID, Principal principal) {
+//        Application.setApplicant(new User.Builder().setUsername(principal.getName()).build()); 从service调用
+        applicationService.addApplication(job_ID, principal.getName());
     }
 
-    @DeleteMapping("/Applications/{ApplicationId}")
-    public void deleteApplication(@PathVariable Long ApplicationId, Principal principal) {
-        ApplicationService.delete(ApplicationId, principal.getName());
+    @DeleteMapping("/Applications/{application_ID}")
+    public void deleteApplication(@PathVariable Long application_ID) {
+        applicationService.delete(application_ID);
     }
 }
