@@ -72,6 +72,11 @@ public class Job implements Serializable {
         return status;
     }
 
+    public Job setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
     public User getEmployer() {
         return employer;
     }

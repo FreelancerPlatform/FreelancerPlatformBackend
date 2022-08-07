@@ -50,8 +50,18 @@ public class Application implements Serializable {
         return status;
     }
 
+    public Application setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
     public int getRate() {
         return rate;
+    }
+
+    public Application setRate(int rate) {
+        this.rate = rate;
+        return this;
     }
 
     public Job getJobID() {
