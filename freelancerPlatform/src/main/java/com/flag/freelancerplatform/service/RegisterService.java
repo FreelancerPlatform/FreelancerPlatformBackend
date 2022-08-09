@@ -36,7 +36,7 @@ public class RegisterService {
     }
 
     @Transactional(isolation = Isolation.SERIALIZABLE)
-    public void add(ApplicantRegisterRequestBody applicantRegisterRequestBody, UserRole role) throws UserAlreadyExistException {
+    public void addApplicant(ApplicantRegisterRequestBody applicantRegisterRequestBody, UserRole role) throws UserAlreadyExistException {
         // set user's information, using builder pattern
         User user = new User.Builder()
                 .setEmail(applicantRegisterRequestBody.getEmail())
@@ -50,7 +50,7 @@ public class RegisterService {
 
         // encode password and save user and authority
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
+        user = userRepository.save(user);
         authorityRepository.save(new Authority(user.getEmail(), role.name()));
 
         // set certifications and save
@@ -72,4 +72,13 @@ public class RegisterService {
         applicantSkillRepository.saveAll(applicantSkillList);
     }
 
+
+    public void addEmployer(User user, UserRole role) {
+        if (userRepository.existsById(user.getEmail())) {
+            throw new UserAlreadyExistException("User already exists");
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
+        authorityRepository.save(new Authority(user.getEmail(), role.name()));
+    }
 }

@@ -23,11 +23,11 @@ public class RegisterController {
 
     @PostMapping("/register/applicant")
     public void addApplicant(@RequestBody ApplicantRegisterRequestBody applicantRegisterRequestBody) {
-        registerService.add(applicantRegisterRequestBody, UserRole.ROLE_APPLICANT);
+        registerService.addApplicant(applicantRegisterRequestBody, UserRole.ROLE_APPLICANT);
     }
 
     @PostMapping("/register/employer")
-    public void addEmployer(@RequestBody ApplicantRegisterRequestBody applicantRegisterRequestBody) {
-        registerService.add(applicantRegisterRequestBody, UserRole.ROLE_EMPlOYER);
+    public void addEmployer(@RequestBody User user) {
+        registerService.addEmployer(user, UserRole.ROLE_EMPlOYER);
     }
 }
