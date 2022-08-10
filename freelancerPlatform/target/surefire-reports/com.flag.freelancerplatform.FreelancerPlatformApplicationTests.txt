@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.flag.freelancerplatform.FreelancerPlatformApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.926 s - in com.flag.freelancerplatform.FreelancerPlatformApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.315 s - in com.flag.freelancerplatform.FreelancerPlatformApplicationTests
