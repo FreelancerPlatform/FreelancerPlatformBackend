@@ -2,6 +2,7 @@ package com.flag.freelancerplatform.repository;
 
 import com.flag.freelancerplatform.model.Application;
 import com.flag.freelancerplatform.model.Job;
+import com.flag.freelancerplatform.model.User;
 import com.flag.freelancerplatform.model.response.ApplicationResponseBody;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,6 +18,8 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     List<Application> findAllByJobID(Long jobID);
 
     Application findByApplicationID(Long applicationID);
+
+    void deleteByApplicationID(Long applicationID);
 
     @Query(value = "SELECT AVG(AP.rate) " +
             "FROM Application AS AP " +

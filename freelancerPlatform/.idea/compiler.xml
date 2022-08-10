@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="freelancerPlatform" target="18" />
+      <module name="freelancerPlatform" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
