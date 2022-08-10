@@ -36,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/authenticate/*").permitAll()
                 .antMatchers(HttpMethod.GET, "/jobs").permitAll()
                 .antMatchers(HttpMethod.GET, "/jobs/*").permitAll()
-                .antMatchers("/employer").hasAnyAuthority("ROLE_EMPLOYER")
                 .antMatchers("/employer/*").hasAnyAuthority("ROLE_EMPLOYER")
                 .antMatchers("/applicants").hasAuthority("ROLE_APPLICANT")
                 .antMatchers("/applicants/*").hasAuthority("ROLE_APPLICANT")
@@ -44,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/profile").hasAnyAuthority("ROLE_APPLICANT", "ROLE_EMPLOYER")
                 .anyRequest().authenticated()
                 .and()
-                .csrf();
+                .csrf().disable();
         http
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
