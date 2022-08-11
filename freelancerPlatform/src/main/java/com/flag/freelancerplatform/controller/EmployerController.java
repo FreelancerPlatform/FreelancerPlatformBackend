@@ -25,7 +25,8 @@ public class EmployerController {
     }
 
     @PostMapping("/employer/job")
-    public void postJob(@RequestBody JobInfo jobInfo) {
+    public void postJob(@RequestBody JobInfo jobInfo, Principal principal) {
+        jobInfo = jobInfo.setEmail(principal.getName());
         employerService.addJob(jobInfo);
     }
 

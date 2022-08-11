@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployerService {
@@ -57,8 +58,9 @@ public class EmployerService {
 
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public void hire(Long application_id) {
-        Job job = applicationRepository.findJobIDByApplicationID(application_id);
-        List<Application> applications = applicationRepository.findAllByJobID(job.getJobID());
+        Application target = applicationRepository.findByApplicationID(application_id);
+        Job job = target.getJobID();
+        List<Application> applications = applicationRepository.findAllByJobID(job);
         for (Application application : applications) {
             if (application.getApplicationID() != application_id) {
                 application.setStatus(String.valueOf(ApplicationStatus.REJECTED));
@@ -76,6 +78,10 @@ public class EmployerService {
     public void rate(Long application_id, int rate) {
         Application application = applicationRepository.findByApplicationID(application_id);
         application.setRate(rate);
+        application.setStatus(String.valueOf(ApplicationStatus.FINISHED));
+        Job job = application.getJobID().setStatus(String.valueOf(ApplicationStatus.FINISHED));
+        applicationRepository.save(application);
+        jobRepository.save(job);
     }
 
     @Transactional(isolation = Isolation.SERIALIZABLE)
@@ -83,7 +89,7 @@ public class EmployerService {
         Job job = jobRepository.findByJobID(job_id);
         job.setStatus(String.valueOf(JobStatus.CLOSED));
         job = jobRepository.save(job);
-        List<Application> applications = applicationRepository.findAllByJobID(job.getJobID());
+        List<Application> applications = applicationRepository.findAllByJobID(job);
         for (Application application : applications) {
             application.setStatus(String.valueOf(ApplicationStatus.CLOSED));
         }

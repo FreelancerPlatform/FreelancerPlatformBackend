@@ -26,7 +26,7 @@ public class RecommendationService {
 
 		List<Job> availableJobs = new ArrayList<>();
 
-		List<Job> publicJobs = jobs.stream().filter(job -> (job.getStatus().equals(JobStatus.PUBLIC))).collect(Collectors.toList());
+		List<Job> publicJobs = jobs.stream().filter(job -> (job.getStatus().equals(String.valueOf(JobStatus.PUBLIC)))).collect(Collectors.toList());
 
 		if (publicJobs.size() == 0) {
 			throw new JobNotExistException("Job of such type doesn't exist");

@@ -28,6 +28,6 @@ public class RegisterController {
 
     @PostMapping("/register/employer")
     public void addEmployer(@RequestBody User user) {
-        registerService.addEmployer(user, UserRole.ROLE_EMPlOYER);
+        registerService.addEmployer(user, UserRole.ROLE_EMPLOYER);
     }
 }

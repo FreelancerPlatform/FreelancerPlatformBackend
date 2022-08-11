@@ -26,6 +26,6 @@ public class AuthenticationController {
 
     @PostMapping("/authenticate/employer")
     public Token authenticateEmployer(@RequestBody User user) {
-        return authenticationService.authenticate(user, UserRole.ROLE_EMPlOYER);
+        return authenticationService.authenticate(user, UserRole.ROLE_EMPLOYER);
     }
 }

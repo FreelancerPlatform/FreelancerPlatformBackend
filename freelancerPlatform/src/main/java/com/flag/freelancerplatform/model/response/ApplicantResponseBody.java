@@ -5,25 +5,20 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;
 
-@JsonDeserialize(builder = ApplicantResponseBody.Builder.class)
 public class ApplicantResponseBody {
 
-    @JsonProperty("email")
     private String email;
 
-    @JsonProperty("name")
     private String name;
 
-    @JsonProperty("gender")
     private String gender;
 
-    @JsonProperty("education_level")
     private String educationLevel;
 
-    @JsonProperty("certification")
+    private Double rate;
+
     private List<String> certification;
 
-    @JsonProperty("skill")
     private List<String> skill;
 
     public ApplicantResponseBody(Builder builder) {
@@ -59,24 +54,29 @@ public class ApplicantResponseBody {
         return skill;
     }
 
+    public Double getRate() {
+        return rate;
+    }
+
+    public ApplicantResponseBody setRate(Double rate) {
+        this.rate = rate;
+        return this;
+    }
+
     public static class Builder {
-        @JsonProperty("email")
         private String email;
 
-        @JsonProperty("name")
         private String name;
 
-        @JsonProperty("gender")
         private String gender;
 
-        @JsonProperty("education_level")
         private String educationLevel;
 
-        @JsonProperty("certification")
         private List<String> certification;
 
-        @JsonProperty("skill")
         private List<String> skill;
+
+        private Double rate;
 
         public Builder setEmail(String email) {
             this.email = email;
@@ -105,6 +105,11 @@ public class ApplicantResponseBody {
 
         public Builder setSkill(List<String> skill) {
             this.skill = skill;
+            return this;
+        }
+
+        public Builder setRate(double rate) {
+            this.rate = rate;
             return this;
         }
 

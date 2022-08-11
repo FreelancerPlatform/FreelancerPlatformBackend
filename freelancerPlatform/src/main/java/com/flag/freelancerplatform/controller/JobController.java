@@ -1,6 +1,7 @@
 package com.flag.freelancerplatform.controller;
 
 import com.flag.freelancerplatform.model.Job;
+import com.flag.freelancerplatform.model.request_reponse.JobInfo;
 import com.flag.freelancerplatform.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,8 +31,8 @@ public class JobController {
 		return jobService.findByJobType(job_type, limit);
 	}
 
-	@GetMapping(value = "/jobs/{job_ID}")
-	public Job getJobByID(@PathVariable Long job_ID) {
+	@GetMapping(value = "/jobs/job_info/{job_ID}")
+	public JobInfo getJobByID(@PathVariable Long job_ID) {
 		return jobService.findByJobId(job_ID);
 	}
 

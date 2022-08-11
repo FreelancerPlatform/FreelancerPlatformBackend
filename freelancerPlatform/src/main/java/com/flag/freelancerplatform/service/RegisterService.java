@@ -43,7 +43,8 @@ public class RegisterService {
                 .setName(applicantRegisterRequestBody.getName())
                 .setPassword(applicantRegisterRequestBody.getPassword())
                 .setGender(applicantRegisterRequestBody.getGender())
-                .setEducationLevel(applicantRegisterRequestBody.getEducationLevel()).build();
+                .setEducationLevel(applicantRegisterRequestBody.getEducationLevel()).build()
+                .setEnabled(true);
         if (userRepository.existsById(user.getEmail())) {
             throw new UserAlreadyExistException("User already exists");
         }
@@ -78,6 +79,7 @@ public class RegisterService {
             throw new UserAlreadyExistException("User already exists");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(true);
         userRepository.save(user);
         authorityRepository.save(new Authority(user.getEmail(), role.name()));
     }

@@ -77,6 +77,11 @@ public class Job implements Serializable {
         return this;
     }
 
+    public Job setEmployer(User employer) {
+        this.employer = employer;
+        return this;
+    }
+
     public User getEmployer() {
         return employer;
     }

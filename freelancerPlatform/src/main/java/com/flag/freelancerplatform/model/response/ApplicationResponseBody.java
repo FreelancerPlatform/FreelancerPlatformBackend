@@ -1,24 +1,17 @@
 package com.flag.freelancerplatform.model.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-@JsonDeserialize(builder = ApplicationResponseBody.Builder.class)
 public class ApplicationResponseBody {
 
-    @JsonProperty("application_ID")
     private Long applicationID;
 
-    @JsonProperty("status")
     private String status;
 
-    @JsonProperty("job_name")
     private String jobName;
 
-    @JsonProperty("applicant_name")
     private String applicantName;
 
-    @JsonProperty("email")
     private String email;
 
     public ApplicationResponseBody() {
@@ -61,19 +54,14 @@ public class ApplicationResponseBody {
     }
 
     public static class Builder {
-        @JsonProperty("application_ID")
         private Long applicationID;
 
-        @JsonProperty("status")
         private String status;
 
-        @JsonProperty("job_name")
         private String jobName;
 
-        @JsonProperty("applicant_name")
         private String applicantName;
 
-        @JsonProperty("email")
         private String email;
 
         public Builder setApplicationID(Long applicationID) {

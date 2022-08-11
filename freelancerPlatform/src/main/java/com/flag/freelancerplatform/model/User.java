@@ -27,6 +27,8 @@ public class User implements Serializable {
     @JsonProperty("education_level")
     private String educationLevel;
 
+    private boolean enabled;
+
     public User() {}
 
     private User(Builder builder) {
@@ -82,6 +84,15 @@ public class User implements Serializable {
         return this;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public User setEnabled(boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
     public static class Builder {
         @JsonProperty("email")
         private String email;
@@ -97,6 +108,9 @@ public class User implements Serializable {
 
         @JsonProperty("education_level")
         private String educationLevel;
+
+        @JsonProperty("enabled")
+        private boolean enabled;
 
         public Builder setEmail(String email) {
             this.email = email;
@@ -120,6 +134,11 @@ public class User implements Serializable {
 
         public Builder setEducationLevel(String educationLevel) {
             this.educationLevel = educationLevel;
+            return this;
+        }
+
+        public Builder setEnabled(boolean enabled) {
+            this.enabled = enabled;
             return this;
         }
 

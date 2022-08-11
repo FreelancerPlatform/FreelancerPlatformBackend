@@ -36,11 +36,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/authenticate/*").permitAll()
                 .antMatchers(HttpMethod.GET, "/jobs").permitAll()
                 .antMatchers(HttpMethod.GET, "/jobs/*").permitAll()
-                .antMatchers("/employer/*").hasAnyAuthority("ROLE_EMPLOYER")
+                .antMatchers(HttpMethod.GET, "/jobs/job_info/*").permitAll()
+                .antMatchers("/employer/*").hasAuthority("ROLE_EMPLOYER")
+                .antMatchers("/employer/applications/*").hasAuthority("ROLE_EMPLOYER")
+                .antMatchers("/employer/hire/*").hasAuthority("ROLE_EMPLOYER")
+                .antMatchers("/employer/rate/*").hasAuthority("ROLE_EMPLOYER")
+                .antMatchers("/employer/close/*").hasAuthority("ROLE_EMPLOYER")
                 .antMatchers("/applicants").hasAuthority("ROLE_APPLICANT")
                 .antMatchers("/applicants/*").hasAuthority("ROLE_APPLICANT")
                 .antMatchers("/recommendation").hasAuthority("ROLE_APPLICANT")
-                .antMatchers("/profile").hasAnyAuthority("ROLE_APPLICANT", "ROLE_EMPLOYER")
+                .antMatchers("/profile/*").hasAnyAuthority("ROLE_APPLICANT", "ROLE_EMPLOYER")
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable();
@@ -55,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
                 .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("SELECT email, password FROM user WHERE email = ?")
+                .usersByUsernameQuery("SELECT email, password, enabled FROM user WHERE email = ?")
                 .authoritiesByUsernameQuery("SELECT email, authority FROM authority WHERE email = ?");
     }
 

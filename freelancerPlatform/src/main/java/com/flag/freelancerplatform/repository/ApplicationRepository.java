@@ -13,38 +13,37 @@ import java.util.List;
 @Repository
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
 
-    Job findJobIDByApplicationID(Long applicationID);
-
-    List<Application> findAllByJobID(Long jobID);
+    List<Application> findAllByJobID(Job jobID);
 
     Application findByApplicationID(Long applicationID);
 
-    void deleteByApplicationID(Long applicationID);
+    Application findAllByEmailAndAndStatus(User user, String status);
 
     @Query(value = "SELECT AVG(AP.rate) " +
             "FROM Application AS AP " +
-            "WHERE AP.email = ?1 ")
-    double findRateByEmail(String email);
+            "WHERE AP.email.email = ?1 AND AP.status = 'FINISHED' " +
+            "GROUP BY AP.email")
+    Double findRateByEmail(String email);
 
-    @Query(value = "SELECT AP.applicationID AS application_ID, " +
-            "AP.status AS status, " +
-            "J.jobName AS job_name, " +
-            "U.name AS applicant_name, " +
-            "AP.email AS email " +
-            "FROM Application AS AP " +
-            "JOIN User AS U ON U.email = AP.email " +
-            "JOIN Job AS J ON J.jobID = AP.jobID.jobID " +
-            "WHERE AP.email = ?1 ")
+    @Query(value = "SELECT new com.flag.freelancerplatform.model.response" +
+            ".ApplicationResponseBody(AP.applicationID, AP.status, J.jobName" +
+            ", U.name, AP.email.email) " +
+            "FROM Application AS AP, " +
+            "User AS U, " +
+            "Job AS J " +
+            "WHERE AP.email.email = ?1 " +
+            "AND U.email = AP.email.email " +
+            "AND J.jobID = AP.jobID.jobID ")
     List<ApplicationResponseBody> findByApplicant(String email);
 
-    @Query(value = "SELECT AP.applicationID AS application_ID, " +
-            "AP.status AS status, " +
-            "J.jobName AS job_name, " +
-            "U.name AS applicant_name, " +
-            "AP.email AS email " +
-            "FROM Application AS AP " +
-            "JOIN User AS U ON U.email = AP.email " +
-            "JOIN Job AS J ON J.jobID = AP.jobID.jobID " +
-            "WHERE AP.jobID.jobID = ?1 ")
+    @Query(value = "SELECT new com.flag.freelancerplatform.model.response" +
+            ".ApplicationResponseBody(AP.applicationID, AP.status, J.jobName" +
+            ", U.name, AP.email.email) " +
+            "FROM Application AS AP, " +
+            "User AS U, " +
+            "Job AS J " +
+            "WHERE AP.jobID.jobID = ?1 " +
+            "AND U.email = AP.email " +
+            "AND J.jobID = AP.jobID.jobID")
     List<ApplicationResponseBody> findByJobID(Long jobID);
 }

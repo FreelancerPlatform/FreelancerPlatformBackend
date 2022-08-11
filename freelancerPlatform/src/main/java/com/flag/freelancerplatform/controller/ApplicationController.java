@@ -17,17 +17,17 @@ public class ApplicationController {
         this.applicationService = applicationService;
     }
 
-    @GetMapping(value = "/Applications")
+    @GetMapping(value = "/applications")
     public List<ApplicationResponseBody> listApplications(Principal principal) {
         return applicationService.listByApplicant(principal.getName());
     }
 
-    @PostMapping("/Applications/{job_ID}")
+    @PostMapping("/applications/{job_ID}")
     public void addApplication(@PathVariable Long job_ID, Principal principal) {
         applicationService.addApplication(job_ID, principal.getName());
     }
 
-    @DeleteMapping("/Applications/{application_ID}")
+    @DeleteMapping("/applications/{application_ID}")
     public void deleteApplication(@PathVariable Long application_ID) {
         applicationService.delete(application_ID);
     }
