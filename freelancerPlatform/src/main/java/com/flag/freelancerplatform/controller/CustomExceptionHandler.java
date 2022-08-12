@@ -1,6 +1,7 @@
 package com.flag.freelancerplatform.controller;
 
 
+import com.flag.freelancerplatform.exception.JobNotExistException;
 import com.flag.freelancerplatform.exception.UserAlreadyExistException;
 import com.flag.freelancerplatform.exception.UserNotExistException;
 import org.springframework.http.HttpStatus;
@@ -22,5 +23,8 @@ public class CustomExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 
-
+    @ExceptionHandler(JobNotExistException.class)
+    public final ResponseEntity<String> handleJobNotExistExceptions(Exception ex, WebRequest request) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
 }
