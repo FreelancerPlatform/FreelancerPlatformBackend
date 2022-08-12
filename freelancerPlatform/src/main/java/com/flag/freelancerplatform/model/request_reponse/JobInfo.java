@@ -5,8 +5,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;
 
+@JsonDeserialize(builder = JobInfo.Builder.class)
 public class JobInfo {
 
+    @JsonProperty("job_name")
     private String jobName;
 
     private String location;
@@ -17,6 +19,7 @@ public class JobInfo {
 
     private String email;
 
+    @JsonProperty("job_type")
     private String jobType;
 
     private List<String> skill;
@@ -66,18 +69,25 @@ public class JobInfo {
 
     public static class Builder {
 
+        @JsonProperty("job_name")
         private String jobName;
 
+        @JsonProperty("location")
         private String location;
 
+        @JsonProperty("salary")
         private int salary;
 
+        @JsonProperty("content")
         private String content;
 
+        @JsonProperty("email")
         private String email;
 
+        @JsonProperty("job_type")
         private String jobType;
 
+        @JsonProperty("skill")
         private List<String> skill;
 
         public Builder setJobName(String jobName) {

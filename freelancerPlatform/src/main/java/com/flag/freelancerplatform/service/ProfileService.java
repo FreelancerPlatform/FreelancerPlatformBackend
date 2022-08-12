@@ -31,7 +31,7 @@ public class ProfileService {
     public ApplicantResponseBody getProfile(String email) {
         User user = userRepository.findByEmail(email);
         List<ApplicantSkill> applicantSkills = applicantSkillRepository.findAllByUser(user);
-        List<Certification> certifications =certificationRepository.findAllByUser(user);
+        List<Certification> certifications = certificationRepository.findAllByUser(user);
         ApplicantResponseBody applicantResponseBody = new ApplicantResponseBody.Builder()
                 .setEmail(user.getEmail())
                 .setName(user.getName())

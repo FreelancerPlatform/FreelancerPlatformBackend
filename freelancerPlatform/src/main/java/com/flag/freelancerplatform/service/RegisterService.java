@@ -55,22 +55,26 @@ public class RegisterService {
         authorityRepository.save(new Authority(user.getEmail(), role.name()));
 
         // set certifications and save
-        List<Certification> certificationList = new ArrayList<>();
-        for (String input : applicantRegisterRequestBody.getCertification()) {
-            CertificationKey certificationKey = new CertificationKey(input, user.getEmail());
-            Certification certification = new Certification(certificationKey, user);
-            certificationList.add(certification);
+        if (applicantRegisterRequestBody.getCertification() != null) {
+            List<Certification> certificationList = new ArrayList<>();
+            for (String input : applicantRegisterRequestBody.getCertification()) {
+                CertificationKey certificationKey = new CertificationKey(input, user.getEmail());
+                Certification certification = new Certification(certificationKey, user);
+                certificationList.add(certification);
+            }
+            certificationRepository.saveAll(certificationList);
         }
-        certificationRepository.saveAll(certificationList);
 
         // set jobSkills and save
-        List<ApplicantSkill> applicantSkillList = new ArrayList<>();
-        for (String input : applicantRegisterRequestBody.getSkill()) {
-            ApplicantSkillKey applicantSkillKey = new ApplicantSkillKey(input, user.getEmail());
-            ApplicantSkill applicantSkill = new ApplicantSkill(applicantSkillKey, user);
-            applicantSkillList.add(applicantSkill);
+        if (applicantRegisterRequestBody.getSkill() != null) {
+            List<ApplicantSkill> applicantSkillList = new ArrayList<>();
+            for (String input : applicantRegisterRequestBody.getSkill()) {
+                ApplicantSkillKey applicantSkillKey = new ApplicantSkillKey(input, user.getEmail());
+                ApplicantSkill applicantSkill = new ApplicantSkill(applicantSkillKey, user);
+                applicantSkillList.add(applicantSkill);
+            }
+            applicantSkillRepository.saveAll(applicantSkillList);
         }
-        applicantSkillRepository.saveAll(applicantSkillList);
     }
 
 

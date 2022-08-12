@@ -5,87 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab1557f6-9912-40da-9a87-1226bf50cf44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/EmployerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/EmployerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/JobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/exception/ApplicationNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/ApplicantSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/ApplicantSkill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/JobType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/JobType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/UserRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/request_reponse/JobInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/request_reponse/JobInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/response/ApplicantResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/response/ApplicantResponseBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/response/ApplicationResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/model/response/ApplicationResponseBody.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/repository/ApplicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/repository/ApplicationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/repository/JobSkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/repository/JobSkillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/EmployerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/EmployerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/JobService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/RecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/RecommendationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/service/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/FreelancerPlatformApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/FreelancerPlatformApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/CustomExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/CustomExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/EmployerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/EmployerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/exception/UserAlreadyExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/exception/UserAlreadyExistException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/exception/UserNotExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/exception/UserNotExistException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/filter/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/filter/CorsFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/filter/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/filter/JwtFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/ApplicantSkill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/ApplicantSkill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/ApplicantSkillKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/ApplicantSkillKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Application$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Application$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/ApplicationStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/ApplicationStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Authority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Authority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Certification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Certification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/CertificationKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/CertificationKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/EducationLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/EducationLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Job$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Job$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobSkill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobSkill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobSkillKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobSkillKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/JobType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/User$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/User$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/request/ApplicantRegisterRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/request/ApplicantRegisterRequestBody.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/request_reponse/JobInfo$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/request_reponse/JobInfo$Builder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/request_reponse/JobInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/request_reponse/JobInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicantResponseBody$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicantResponseBody$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicantResponseBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicantResponseBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicationResponseBody$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicationResponseBody$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicationResponseBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/model/response/ApplicationResponseBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/ApplicantSkillRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/ApplicantSkillRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/ApplicationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/ApplicationRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/AuthorityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/AuthorityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/CertificationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/CertificationRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/JobRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/JobRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/JobSkillRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/JobSkillRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/service/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/service/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/service/EmployerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/service/EmployerService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/service/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/util/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/flag/freelancerplatform/util/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/freelancerPlatform-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/freelancerPlatform-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/freelancerPlatform-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/freelancerPlatform-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.flag.freelancerplatform.FreelancerPlatformApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.flag.freelancerplatform.FreelancerPlatformApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.flag.freelancerplatform.FreelancerPlatformApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.flag.freelancerplatform.FreelancerPlatformApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/flag/freelancerplatform/FreelancerPlatformApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/flag/freelancerplatform/FreelancerPlatformApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,25 +62,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelOrder2": "2",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RequestMappingsPanelWidth2": "75",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/flag/freelancerplatform/controller" />

@@ -17,7 +17,7 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
 
     Application findByApplicationID(Long applicationID);
 
-    Application findAllByEmailAndAndStatus(User user, String status);
+    List<Application> findAllByEmailAndAndStatus(User user, String status);
 
     @Query(value = "SELECT AVG(AP.rate) " +
             "FROM Application AS AP " +
