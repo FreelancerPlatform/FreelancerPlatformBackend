@@ -25,6 +25,6 @@ public class CustomExceptionHandler {
 
     @ExceptionHandler(JobNotExistException.class)
     public final ResponseEntity<String> handleJobNotExistExceptions(Exception ex, WebRequest request) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

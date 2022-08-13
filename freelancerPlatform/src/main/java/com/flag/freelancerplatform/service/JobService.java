@@ -48,15 +48,7 @@ public class JobService {
 
 		List<Job> publicJobs = jobs.stream().filter(job -> (job.getStatus().equals(String.valueOf(JobStatus.PUBLIC)))).collect(Collectors.toList());
 
-		System.out.println(publicJobs);
-
-		if (publicJobs == null ||publicJobs.size() == 0) {
-			throw new JobNotExistException("Job of such type doesn't exist");
-		} else if (publicJobs.size() > limit) {
-			return publicJobs.subList(0, limit);
-		} else {
-			return publicJobs;
-		}
+		return publicJobs;
 	}
 
 	public JobInfo findByJobId(Long jobID) throws JobNotExistException {
